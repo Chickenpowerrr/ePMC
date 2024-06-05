@@ -369,7 +369,7 @@ public final class PropertySolverExplicitMultiObjective implements PropertySolve
         boolean numerical = MultiObjectiveUtils.isNumericalQuery(propertyMultiObjective);
         ValueArray resultValues;
         if (numerical) {
-            //            ensure(feasible, ProblemsMultiObjective.MULTI_OBJECTIVE_UNEXPECTED_INFEASIBLE);
+            ensure(feasible, ProblemsMultiObjective.MULTI_OBJECTIVE_UNEXPECTED_INFEASIBLE);
             resultValues = newValueArrayWeight(forStates.size());
             ValueAlgebra entry = newValueWeight();
             bounds.get(entry, 0);
