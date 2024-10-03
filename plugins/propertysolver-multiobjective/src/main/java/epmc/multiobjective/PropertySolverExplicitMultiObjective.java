@@ -187,6 +187,7 @@ public final class PropertySolverExplicitMultiObjective implements PropertySolve
         property = propertyMultiObjective = normaliser.getNormalisedProperty();
         Expression subtractNumericalFrom = normaliser.getSubtractNumericalFrom();
         BitSet invertedRewards = normaliser.getInvertedRewards();
+        BitSet rewardProperties = normaliser.getRewardProperties();
         getLog().send(MessagesMultiObjective.DONE_NORMALISING_FORMULA);
         getLog().send(MessagesMultiObjective.STARTING_NESTED_FORMULAS);
         prepareRequiredPropositionals();
@@ -198,6 +199,7 @@ public final class PropertySolverExplicitMultiObjective implements PropertySolve
                 .setModelChecker(modelChecker)
                 .setGraph(graph)
                 .setInvertedRewards(invertedRewards)
+                .setRewardProperties(rewardProperties)
                 .build();
         getLog().send(MessagesMultiObjective.DONE_PRODUCT);
         StateMap result = mainLoop(product, subtractNumericalFrom);
